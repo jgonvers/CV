@@ -24,32 +24,6 @@ body {
     line-height: 1.4;
 }
 
-.header {
-    display: flex;
-    text-align: center;
-    width: 90%;
-    justify-content: space-between;
-    margin: auto;
-    align-items: center;
-}
-
-.background {
-    width: 100%;
-    position: fixed;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    z-index: -1;
-}
-
-.left {
-    width: calc(50% - (1000px) / 6);
-    background-color: #92D2DB;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 h3 {
     display: table;
     white-space: nowrap;
@@ -147,31 +121,38 @@ table {
     margin: auto;
 }
 
+.header {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+
 .header img {
     max-width: 200px;
     height: auto;
     aspect-ratio: 0.75;
     background-color: white;
     border-radius: 0 1.5em 0 1.5em;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1em;
-    margin-left: 2em;
     padding: 0.5em;
     box-shadow: 5px 5px 5px grey;
 }
 
 .header-content {
-    margin-top: 1em;
     width: 60%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1em;
 }
 
 .header-content p {
     text-align: justify;
     margin: 0;
-}
-
-/*temporary until translated*/
-.header-content p.english {
-    text-align: center;
 }
 
 .page {
@@ -181,6 +162,7 @@ table {
 
 .link {
     margin-top: auto;
+    /*allow it to be aligned at the bottom*/
 }
 
 .link img {
@@ -209,6 +191,28 @@ table {
     height: 22px;
 }
 
+.background {
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+
+.background .left {
+    width: calc(50% - (1000px) / 6);
+    background-color: #92D2DB;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*temporary until translated*/
+.header-content p.english {
+    text-align: center;
+}
+
 @media print {
     /*force use of no margin*/
     /*
@@ -218,6 +222,7 @@ table {
 
     body {
         font-size: 11.5pt;
+        /*allow to stay in 1 page*/
         /*force use of background color*/
         /*
         -webkit-print-color-adjust: exact !important;
@@ -226,26 +231,38 @@ table {
     }
 
     .background {
+        /* size of A4 */
         width: 210mm;
         height: 297mm;
     }
 
-    .left {
+    .background .left {
         width: 33%;
     }
 
     .page {
+        /* size of A4*/
         width: 210mm;
         height: 297mm;
     }
 
     .header img {
-        width: 3.75cm;
+        /*ratio 0.75*/
+        width: calc(5cm * 0.75);
         height: 5cm;
+    }
+
+    .header img,
+    .header-content {
+        margin-top: 2em;
     }
 
     .content {
         margin-top: 1em;
+    }
+
+    .link {
+        margin-top: auto;
     }
 
     a {
@@ -265,25 +282,13 @@ table {
         width: 66%;
     }
 
-    .header-content {
-        width: 66%;
-    }
-
-    .header img {
-        margin-left: 1em;
-    }
-
-    .link {
-        margin-top: auto;
-    }
-
     .h3 {
         margin-bottom: 1em;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .left {
+    .background .left {
         width: 33%;
     }
 }
