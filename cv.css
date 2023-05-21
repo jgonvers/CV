@@ -2,6 +2,18 @@
     width: 40%;
 }
 
+.right-col {
+    width: 60%;
+}
+
+.right-col,
+.left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+}
+
 .hide {
     display: none;
 }
@@ -16,7 +28,7 @@ body {
     display: flex;
     text-align: center;
     width: 90%;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: auto;
     align-items: center;
 }
@@ -45,6 +57,7 @@ h3 {
     text-transform: uppercase;
     padding-left: 0.75em;
     padding-right: 0.75em;
+    margin-top: 0;
 }
 
 h3:before,
@@ -68,7 +81,8 @@ h3:after {
 .content {
     width: 90%;
     margin: auto;
-    margin-top: 1em;
+    margin-top: 2em;
+    margin-bottom: 0;
     padding: 0;
 }
 
@@ -76,6 +90,7 @@ ul {
     padding-left: 5%;
     list-style-type: None;
     width: 95%;
+    margin: 0;
 }
 
 .info li {
@@ -92,7 +107,7 @@ ul {
     list-style-type: disc;
     list-style-position: outside;
     font-style: italic;
-    margin: 0;
+
 }
 
 .training td,
@@ -145,13 +160,26 @@ table {
 }
 
 .header-content {
-    margin: auto;
     margin-top: 1em;
+    width: 60%;
+}
+
+.header-content p {
+    text-align: justify;
+}
+
+/*temporary until translated*/
+.header-content p.english {
+    text-align: center;
 }
 
 .page {
     max-width: 1000px;
     margin: auto
+}
+
+.link {
+    margin-top: auto;
 }
 
 .link img {
@@ -166,9 +194,6 @@ table {
     margin-top: 0.3em;
 }
 
-.link {
-    margin-top: 4em;
-}
 
 .translation-icon {
     position: absolute;
@@ -184,14 +209,19 @@ table {
 }
 
 @media print {
+    /*force use of no margin*/
+    /*
     @page {
         margin: 0;
-    }
+    }*/
 
     body {
-        font-size: 12pt;
+        font-size: 11.5pt;
+        /*force use of background color*/
+        /*
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        */
     }
 
     .background {
@@ -209,8 +239,12 @@ table {
     }
 
     .header img {
-        width: 3cm;
-        height: 4cm;
+        width: 3.75cm;
+        height: 5cm;
+    }
+
+    .content {
+        margin-top: 1em;
     }
 
     a {
@@ -220,6 +254,30 @@ table {
 
     .hide-print {
         display: none;
+    }
+
+    .left-col {
+        width: 33%;
+    }
+
+    .right-col {
+        width: 66%;
+    }
+
+    .header-content {
+        width: 66%;
+    }
+
+    .header img {
+        margin-left: 1em;
+    }
+
+    .link {
+        margin-top: auto;
+    }
+
+    .h3 {
+        margin-bottom: 1em;
     }
 }
 
@@ -234,7 +292,9 @@ table {
         align-items: center;
     }
 
-    .left-col {
+    .right-col,
+    .left-col,
+    .header-content {
         width: 100%;
     }
 
@@ -242,4 +302,5 @@ table {
         flex-direction: column;
         align-items: center;
     }
+
 }
