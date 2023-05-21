@@ -1,9 +1,9 @@
 .left-col {
-    width: 40%;
+    width: 33%;
 }
 
 .right-col {
-    width: 60%;
+    width: 66%;
 }
 
 .right-col,
@@ -43,7 +43,7 @@ body {
 }
 
 .left {
-    width: calc(50% - (1000px) / 9);
+    width: calc(50% - (1000px) / 6);
     background-color: #92D2DB;
     height: 100%;
     margin: 0;
@@ -166,6 +166,7 @@ table {
 
 .header-content p {
     text-align: justify;
+    margin: 0;
 }
 
 /*temporary until translated*/
@@ -281,7 +282,34 @@ table {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
+    .left {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 730px),
+screen and (max-device-width: 750px) {
+    /*change to a nighmode coloring*/
+    /*
+    body {
+        background-color: #151515;
+        color: white;
+    }
+
+    a {
+        color: lightblue;
+    }
+
+    a:visited {
+        color: #b19cd9;
+    }
+
+    h3:before,
+    h3:after {
+        border-top-color: white;
+    }
+    */
 
     .background {
         display: None;
@@ -294,8 +322,12 @@ table {
 
     .right-col,
     .left-col,
-    .header-content {
+    .header {
         width: 100%;
+    }
+
+    .header-content {
+        width: 90%;
     }
 
     .header {
