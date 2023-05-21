@@ -213,6 +213,7 @@ table {
     text-align: center;
 }
 
+/*aim to print on only one page*/
 @media print {
     /*force use of no margin*/
     /*
@@ -222,7 +223,6 @@ table {
 
     body {
         font-size: 11.5pt;
-        /*allow to stay in 1 page*/
         /*force use of background color*/
         /*
         -webkit-print-color-adjust: exact !important;
@@ -230,7 +230,8 @@ table {
         */
     }
 
-    .background {
+    .background,
+    .page {
         /* size of A4 */
         width: 210mm;
         height: 297mm;
@@ -240,14 +241,7 @@ table {
         width: 33%;
     }
 
-    .page {
-        /* size of A4*/
-        width: 210mm;
-        height: 297mm;
-    }
-
     .header img {
-        /*ratio 0.75*/
         width: calc(5cm * 0.75);
         height: 5cm;
     }
