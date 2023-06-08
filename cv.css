@@ -208,11 +208,6 @@ table {
     padding: 0;
 }
 
-/*temporary until translated*/
-.header-content p.english {
-    text-align: center;
-}
-
 /*aim to print on only one page*/
 @media print {
     /*force use of no margin*/
@@ -248,7 +243,7 @@ table {
 
     .header img,
     .header-content {
-        margin-top: 2em;
+        margin-top: 1.5em;
     }
 
     .content {
